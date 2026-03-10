@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -447,7 +447,9 @@ box-shadow:0 6px 18px rgba(0,0,0,0.25);
       width:44px; height:44px; border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.04); color:#fff; cursor:pointer;
-      font-size:22px; line-height:1;
+      font-size:24px; line-height:1;
+      display:flex; align-items:center; justify-content:center;
+      padding:0;
     }
     .modal-grid{
       display:grid; grid-template-columns:1.05fr .95fr; gap:20px;
@@ -460,7 +462,27 @@ box-shadow:0 6px 18px rgba(0,0,0,0.25);
       background:linear-gradient(135deg, #12203a, #214978 60%, #0e2037);
       position:relative;
     }
-    .modal-cover .cover-inner{padding:28px}
+    .modal-cover::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:inherit;
+      background-size:cover;
+      background-position:center;
+      transform:scale(1);
+      opacity:1;
+    }
+    .modal-cover::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:140px;
+      background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+      pointer-events:none;
+    }
+    .modal-cover .cover-inner{position:relative; z-index:1; padding:28px; height:100%}
     .modal-content{
       border-radius:22px;
       background:rgba(255,255,255,.03);
@@ -521,13 +543,13 @@ box-shadow:0 6px 18px rgba(0,0,0,0.25);
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a href="#top" class="brand">CHERTOVA</a>
+      <a href="#top" class="brand">ЧЁРТОВА СТУДИЯ</a>
       <nav class="nav-links">
         <a href="#works">Работы</a>
         <a href="#about">Обо мне</a>
         <a href="#reviews">Отзывы</a>
       </nav>
-      <a class="cta" href="https://t.me/ch8rti" target="_blank" rel="noopener">Заказать монтаж</a>
+      <a class="cta" href="https://t.me/ch8rti" target="_blank" rel="noopener">Telegram</a>
     </div>
   </header>
 
@@ -674,7 +696,7 @@ box-shadow:0 6px 18px rgba(0,0,0,0.25);
         <a href="#works">Работы</a>
         <a href="#about">Обо мне</a>
         <a href="#reviews">Отзывы</a>
-        <a href="https://t.me/ch8rti" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://t.me/ch8rti" target="_blank" rel="noopener">Заказать монтаж</a>
       </div>
     </div>
   </footer>
@@ -714,12 +736,13 @@ box-shadow:0 6px 18px rgba(0,0,0,0.25);
         description: 'В этом проекте акцент сделан на динамичный ритм, читаемую подачу, усиление смысловых моментов и аккуратную motion-графику, которая помогает зрителю не терять фокус.',
         cover: `
           <div class="cover-inner">
-            <div class="cover-badge">Игровой формат</div>
+            <div class="cover-badge">Образовательный формат</div>
             <div class="cover-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
             </div>
           </div>
         `,
+        coverStyle: "background-image:url('https://img.youtube.com/vi/d7Ow-mqDBMg/maxresdefault.jpg'); background-size:cover; background-position:center;",
         list: [
           'плавная структура повествования без провисаний',
           'визуальные акценты на ключевых мыслях',
@@ -740,6 +763,7 @@ box-shadow:0 6px 18px rgba(0,0,0,0.25);
             </div>
           </div>
         `,
+        coverStyle: "background-image:url('https://img.youtube.com/vi/ExHY8cCCz_g/maxresdefault.jpg'); background-size:cover; background-position:center;",
         list: [
           'быстрый ритм и усиление драматургии',
           'динамичные переходы и работа с напряжением',
@@ -767,11 +791,7 @@ box-shadow:0 6px 18px rgba(0,0,0,0.25);
       modalYoutube.href = data.youtube;
       modalList.innerHTML = data.list.map(item => `<li>${item}</li>`).join('');
       modalCover.innerHTML = data.cover;
-      if(key === 'battle'){
-        modalCover.style.background = 'linear-gradient(135deg,#21120f,#734026 55%,#22110e)';
-      } else {
-        modalCover.style.background = 'linear-gradient(135deg, #12203a, #214978 60%, #0e2037)';
-      }
+      modalCover.style.cssText = data.coverStyle;
       modal.classList.add('open');
       modal.setAttribute('aria-hidden','false');
       document.body.style.overflow = 'hidden';
