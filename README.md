@@ -67,20 +67,12 @@
       width:100%;
       backdrop-filter:blur(14px);
       background:rgba(4,10,18,.55);
+      border:none;
+
       border-bottom:none !important;
     }
 
-    .site-header::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      width:100%;
-      height:1px;
-      background:rgba(255,255,255,.08);
-      pointer-events:none;
-    }
+    
 
     .nav{
       min-height:78px;
@@ -321,16 +313,20 @@
       border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.04);
-      color:transparent;
+      color:#fff;
       cursor:pointer;
+
       display:flex;
       align-items:center;
       justify-content:center;
+
+      font-size:28px;
+      line-height:1;
+
       padding:0;
       flex:0 0 44px;
+
       position:relative;
-      font-size:0;
-      line-height:0;
     }
 
     .close-btn::before{
