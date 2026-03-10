@@ -56,6 +56,7 @@
     img{max-width:100%;display:block}
 
     .container{width:min(var(--container), calc(100% - 40px)); margin:0 auto}
+
     @media (min-width:1800px){
       .container{width:min(1680px, calc(100% - 72px));}
     }
@@ -68,11 +69,8 @@
       backdrop-filter:blur(14px);
       background:rgba(4,10,18,.55);
       border:none;
-
-      border-bottom:none !important;
+      box-shadow:none;
     }
-
-    
 
     .nav{
       min-height:78px;
@@ -80,8 +78,8 @@
       align-items:center;
       justify-content:space-between;
       gap:24px;
-      border:none !important;
-      box-shadow:none !important;
+      border:none;
+      box-shadow:none;
     }
 
     .brand{font-size:34px; font-weight:800; letter-spacing:-.05em}
@@ -90,24 +88,33 @@
     .nav-links a{position:relative; font-size:16px}
     .nav-links a::after{
       content:"";
-      position:absolute; left:0; bottom:-8px;
-      width:0; height:2px; border-radius:999px;
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:0;
+      height:2px;
+      border-radius:999px;
       background:linear-gradient(90deg,var(--blue-2),transparent);
       transition:width .25s ease;
     }
     .nav-links a:hover::after{width:100%}
 
     .cta, .ghost-btn, .project-link{
-      border:none; cursor:pointer;
+      border:none;
+      cursor:pointer;
       transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
       font:inherit;
     }
 
     .cta{
-      display:inline-flex; align-items:center; justify-content:center;
-      height:52px; padding:0 28px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height:52px;
+      padding:0 28px;
       border-radius:14px;
-      font-weight:700; color:#fff;
+      font-weight:700;
+      color:#fff;
       background:linear-gradient(180deg,var(--blue-2),var(--blue));
       border:1px solid rgba(255,255,255,.09);
       box-shadow:0 14px 34px rgba(36,133,255,.24);
@@ -115,9 +122,14 @@
     }
 
     .project-link, .ghost-btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      min-height:46px; padding:0 18px; border-radius:14px;
-      font-weight:700; white-space:nowrap;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 18px;
+      border-radius:14px;
+      font-weight:700;
+      white-space:nowrap;
       background:rgba(255,255,255,.05);
       color:#d9e8ff;
       border:1px solid rgba(255,255,255,.08);
@@ -127,7 +139,10 @@
 
     .hero{
       min-height:760px;
-      display:grid; grid-template-columns:1.08fr .92fr; gap:46px; align-items:center;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:46px;
+      align-items:center;
       padding:82px 0 88px;
       position:relative;
     }
@@ -138,7 +153,8 @@
 
     .stats{
       width:min(740px,100%);
-      display:flex; overflow:hidden;
+      display:flex;
+      overflow:hidden;
       border-radius:22px;
       background:rgba(17,27,39,.76);
       border:1px solid rgba(255,255,255,.08);
@@ -153,7 +169,9 @@
 
     .hero-visual{position:relative; height:620px; display:flex; align-items:center; justify-content:center}
     .ring{
-      width:420px; height:420px; border-radius:50%;
+      width:420px;
+      height:420px;
+      border-radius:50%;
       border:4px solid rgba(255,255,255,.76);
       box-shadow:0 0 40px rgba(255,255,255,.18), inset 0 0 34px rgba(255,255,255,.04);
       animation:ringPulse 4.6s ease-in-out infinite;
@@ -163,8 +181,12 @@
     .orb-2{width:140px; height:140px; right:90px; bottom:120px; animation-delay:-2.6s}
     .app{
       position:absolute;
-      width:214px; height:214px; border-radius:34px;
-      display:flex; align-items:center; justify-content:center;
+      width:214px;
+      height:214px;
+      border-radius:34px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       border:2px solid rgba(255,255,255,.16);
       background:linear-gradient(180deg,#1b2a8b,#0b0a84);
       box-shadow:0 28px 42px rgba(0,0,0,.34), 0 0 28px rgba(36,133,255,.10);
@@ -172,7 +194,8 @@
     }
     .app::before{
       content:"";
-      position:absolute; inset:0;
+      position:absolute;
+      inset:0;
       background:linear-gradient(135deg, rgba(255,255,255,.12), transparent 40%, transparent 60%, rgba(255,255,255,.08));
       transform:translateX(-100%);
       animation:shine 4.8s linear infinite;
@@ -180,6 +203,7 @@
     .app.ae{top:88px; left:78px; animation:float1 5s ease-in-out infinite}
     .app.pr{bottom:96px; right:84px; animation:float2 5.8s ease-in-out infinite}
     .app span{position:relative; z-index:1; font-size:108px; font-weight:800; letter-spacing:-.06em; color:#a8a8ff}
+
     @keyframes shine{0%{transform:translateX(-120%)} 20%,100%{transform:translateX(120%)}}
     @keyframes ringPulse{0%,100%{transform:scale(1)} 50%{transform:scale(1.03)}}
     @keyframes orbFloat{0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)}}
@@ -190,6 +214,7 @@
     .section-title{margin:0 0 20px; font-size:46px; letter-spacing:-.04em}
 
     .projects{display:grid; grid-template-columns:repeat(2,1fr); gap:24px}
+
     .project-card, .about-card, .review-card, .modal-panel{
       position:relative;
       background:var(--card);
@@ -198,10 +223,12 @@
       box-shadow:var(--shadow);
       overflow:hidden;
     }
+
     .project-card, .review-card{transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease; isolation:isolate}
     .project-card::before, .review-card::before{
       content:"";
-      position:absolute; inset:-1px;
+      position:absolute;
+      inset:-1px;
       border-radius:inherit;
       padding:1px;
       background:linear-gradient(135deg, rgba(99,176,255,0), rgba(99,176,255,.68), rgba(99,176,255,0));
@@ -229,27 +256,42 @@
     }
     .project-cover::before{
       content:"";
-      position:absolute; inset:0;
+      position:absolute;
+      inset:0;
       background:linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.20));
       pointer-events:none;
     }
+
     .cover-inner{position:relative; z-index:1; width:100%; height:100%; padding:24px}
     .cover-badge{
-      position:absolute; top:16px; left:16px;
-      display:flex; align-items:center; gap:6px;
+      position:absolute;
+      top:16px;
+      left:16px;
+      display:flex;
+      align-items:center;
+      gap:6px;
       padding:6px 10px;
-      font-size:12px; font-weight:600; color:#fff;
+      font-size:12px;
+      font-weight:600;
+      color:#fff;
       background:rgba(0,0,0,0.35);
       backdrop-filter:blur(8px);
       border-radius:8px;
       box-shadow:0 6px 18px rgba(0,0,0,0.25);
     }
     .cover-icon{
-      position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-      width:76px; height:76px; border-radius:22px;
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      width:76px;
+      height:76px;
+      border-radius:22px;
       background:rgba(7,15,26,.56);
       border:1px solid rgba(255,255,255,.12);
-      display:flex; align-items:center; justify-content:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       box-shadow:0 18px 34px rgba(0,0,0,.24);
     }
     .cover-icon svg{width:34px; height:34px; fill:white; opacity:.95}
@@ -281,10 +323,14 @@
     .footer-links{display:flex; gap:20px; flex-wrap:wrap}
 
     .modal{
-      position:fixed; inset:0; z-index:120;
-      display:grid; place-items:center;
+      position:fixed;
+      inset:0;
+      z-index:120;
+      display:grid;
+      place-items:center;
       padding:24px;
-      opacity:0; pointer-events:none;
+      opacity:0;
+      pointer-events:none;
       transition:opacity .22s ease;
       overflow-y:auto;
       overscroll-behavior:contain;
@@ -293,7 +339,8 @@
     .modal.open{opacity:1; pointer-events:auto}
     .modal-backdrop{position:absolute; inset:0; background:rgba(1,5,10,.70); backdrop-filter:blur(10px)}
     .modal-panel{
-      position:relative; z-index:1;
+      position:relative;
+      z-index:1;
       width:min(860px, 100%);
       padding:22px;
       transform:translateY(18px) scale(.98);
@@ -304,39 +351,36 @@
       -webkit-overflow-scrolling:touch;
     }
     .modal.open .modal-panel{transform:translateY(0) scale(1)}
-    .modal-header{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:18px}
+    .modal-header{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:18px; position:static; background:transparent}
     .modal-title{margin:0; font-size:34px; line-height:1.05; letter-spacing:-.04em}
     .modal-sub{margin:8px 0 0; color:#aebdcb; font-size:16px}
+
     .close-btn{
       width:44px;
       height:44px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.04);
-      color:#fff;
       cursor:pointer;
-
       display:flex;
       align-items:center;
       justify-content:center;
-
-      font-size:28px;
-      line-height:1;
-
       padding:0;
       flex:0 0 44px;
-
       position:relative;
+      font-size:0;
+      line-height:0;
+      color:transparent;
     }
-
     .close-btn::before{
       content:"×";
       color:#fff;
-      font-size:30px;
+      font-size:28px;
       line-height:1;
       display:block;
       transform:translateY(-1px);
     }
+
     .modal-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:20px}
     .modal-cover{
       min-height:320px;
@@ -360,7 +404,9 @@
     .modal-cover::after{
       content:"";
       position:absolute;
-      left:0; right:0; bottom:0;
+      left:0;
+      right:0;
+      bottom:0;
       height:140px;
       background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
       pointer-events:none;
@@ -419,7 +465,7 @@
       .project-actions .project-link, .project-actions .ghost-btn{width:100%}
       .modal{padding:max(10px, env(safe-area-inset-top)) 10px max(10px, env(safe-area-inset-bottom))}
       .modal-panel{padding:14px; max-height:calc(100dvh - max(12px, env(safe-area-inset-top)) - max(12px, env(safe-area-inset-bottom))); border-radius:20px}
-      .modal-header{position:static; background:transparent; padding-bottom:0; margin-bottom:14px}
+      .modal-header{margin-bottom:14px}
       .modal-title{font-size:24px}
       .modal-sub{font-size:14px; line-height:1.4}
       .modal-cover{min-height:220px}
@@ -597,7 +643,7 @@
           <h3 class="modal-title" id="modalTitle"></h3>
           <p class="modal-sub" id="modalSubtitle"></p>
         </div>
-        <button class="close-btn" id="closeModal" aria-label="Закрыть">×</button>
+        <button class="close-btn" id="closeModal" aria-label="Закрыть"></button>
       </div>
       <div class="modal-grid">
         <div class="modal-cover" id="modalCover"></div>
