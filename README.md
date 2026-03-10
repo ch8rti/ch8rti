@@ -385,7 +385,7 @@
       .project-actions .project-link, .project-actions .ghost-btn{width:100%}
       .modal{padding:max(10px, env(safe-area-inset-top)) 10px max(10px, env(safe-area-inset-bottom))}
       .modal-panel{padding:14px; max-height:calc(100dvh - max(12px, env(safe-area-inset-top)) - max(12px, env(safe-area-inset-bottom))); border-radius:20px}
-      .modal-header{position:sticky; top:0; z-index:3; background:rgba(10,16,25,.96); padding-bottom:12px; margin-bottom:14px}
+      .modal-header{position:static; background:transparent; padding-bottom:0; margin-bottom:14px}
       .modal-title{font-size:24px}
       .modal-sub{font-size:14px; line-height:1.4}
       .modal-cover{min-height:220px}
