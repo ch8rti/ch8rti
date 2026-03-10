@@ -64,7 +64,16 @@
       position:sticky; top:0; z-index:80;
       backdrop-filter:blur(14px);
       background:rgba(4,10,18,.55);
-      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+
+    .site-header::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+      height:1px;
+      background:rgba(255,255,255,.08);
     }
 
     .nav{
