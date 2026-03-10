@@ -46,6 +46,12 @@
       animation:bgDrift 16s ease-in-out infinite;
     }
 
+    header, main, .container{
+      border-top:none !important;
+      outline:none !important;
+      box-shadow:none;
+    }
+
     @keyframes bgDrift{
       0%,100%{transform:translateY(0)}
       50%{transform:translateY(-14px)}
@@ -68,8 +74,21 @@
       width:100%;
       backdrop-filter:blur(14px);
       background:rgba(4,10,18,.55);
-      border:none;
-      box-shadow:none;
+      border:none !important;
+      border-top:none !important;
+      border-bottom:none !important;
+      box-shadow:none !important;
+      outline:none !important;
+    }
+
+    .site-header::before,
+    .site-header::after,
+    .nav::before,
+    .nav::after{
+      content:none !important;
+      display:none !important;
+      border:none !important;
+      box-shadow:none !important;
     }
 
     .nav{
@@ -78,8 +97,11 @@
       align-items:center;
       justify-content:space-between;
       gap:24px;
-      border:none;
-      box-shadow:none;
+      border:none !important;
+      border-top:none !important;
+      border-bottom:none !important;
+      box-shadow:none !important;
+      outline:none !important;
     }
 
     .brand{font-size:34px; font-weight:800; letter-spacing:-.05em}
