@@ -296,12 +296,24 @@
     .modal-title{margin:0; font-size:34px; line-height:1.05; letter-spacing:-.04em}
     .modal-sub{margin:8px 0 0; color:#aebdcb; font-size:16px}
     .close-btn{
-      width:44px; height:44px; border-radius:14px;
+      width:44px;
+      height:44px;
+      border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.04); color:#fff; cursor:pointer;
-      font-size:24px; line-height:1;
-      display:flex; align-items:center; justify-content:center;
-      padding:0; flex:0 0 44px;
+      background:rgba(255,255,255,.04);
+      color:#fff;
+      cursor:pointer;
+
+      font-size:26px;
+      line-height:44px;
+      text-align:center;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      padding:0;
+      flex:0 0 44px;
     }
     .modal-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:20px}
     .modal-cover{
