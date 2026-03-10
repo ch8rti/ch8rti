@@ -61,24 +61,35 @@
     }
 
     .site-header{
-      position:sticky; top:0; z-index:80;
+      position:sticky;
+      top:0;
+      z-index:80;
+      width:100%;
       backdrop-filter:blur(14px);
       background:rgba(4,10,18,.55);
+      border-bottom:none !important;
     }
 
     .site-header::after{
       content:"";
       position:absolute;
       left:0;
+      right:0;
       bottom:0;
       width:100%;
       height:1px;
       background:rgba(255,255,255,.08);
+      pointer-events:none;
     }
 
     .nav{
       min-height:78px;
-      display:flex; align-items:center; justify-content:space-between; gap:24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      border:none !important;
+      box-shadow:none !important;
     }
 
     .brand{font-size:34px; font-weight:800; letter-spacing:-.05em}
@@ -310,19 +321,25 @@
       border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.04);
-      color:#fff;
+      color:transparent;
       cursor:pointer;
-
-      font-size:26px;
-      line-height:44px;
-      text-align:center;
-
       display:flex;
       align-items:center;
       justify-content:center;
-
       padding:0;
       flex:0 0 44px;
+      position:relative;
+      font-size:0;
+      line-height:0;
+    }
+
+    .close-btn::before{
+      content:"×";
+      color:#fff;
+      font-size:30px;
+      line-height:1;
+      display:block;
+      transform:translateY(-1px);
     }
     .modal-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:20px}
     .modal-cover{
